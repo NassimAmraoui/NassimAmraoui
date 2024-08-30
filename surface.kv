@@ -1,0 +1,704 @@
+Win_p:
+    Win_first:
+    Win_second:
+    Win_three:
+    
+<Win_first>:
+    name:'first'
+    canvas:
+        Rectangle:
+            source:"img.jpg"
+            size: self.size
+    Image:
+        source:'pngegg.png'
+        pos: '5dp','210dp'
+        color: 3 , 0 , 0 , 1
+    Button:
+        text:'START CALCUL MOYENNE'
+        size_hint: .4,.1
+        pos: '150dp','270dp'
+        background_color: "#21EDE8"
+        on_release:
+            app.root.current='three'
+            root.manager.transition.direction='up'
+        
+    Button:
+        text:'ABOUT'
+        size_hint: .4,.1
+        pos: '150dp','200dp' 
+        background_color:"#21EDE8"
+        on_release:
+            app.root.current = "second"
+        
+<Win_second>:
+    name:'second'
+    canvas:
+        Rectangle:
+            source:"img.jpg"
+            size:self.size  
+        
+    Label:
+        text:'Welcome to our application .\nour goal with application \nis to gain experience and we also try to\n calcu a grade point average\n at the university . this application was\n developed by first year students of computer science\n'
+        color: 0 , 0 , 0 , 1
+        pos: '10dp','200dp'
+        font_size:17
+       
+    Label:
+        text:'Amraoui Nassim'
+        color: 0 , 0 , 0 , 1
+        pos: '90dp','10dp'
+        font_size:25
+        
+    Image:
+        source:"icon.png"
+        size_hint:.1,.1
+        pos: '400dp','280dp'
+    
+    Label:
+        text:'CELIA'
+        pos: '120dp','-40dp' 
+        font_size:25
+        color: 0 , 0 , 0 , 1
+    Image:
+        source:"icon.png"
+        size_hint:.1,.1
+        pos: '400dp','230dp'
+    Label:
+        text:'DIDIN'
+        pos: '120dp','-100dp' 
+        color: 0 , 0 , 0 , 1
+        font_size:25
+    Image:
+        source:"icon.png"
+        size_hint:.1,.1
+        pos: '400dp','180dp'
+
+    Label:
+        text:'RAHMA'
+        pos: '120dp','-145dp' 
+        color: 0 , 0 , 0 , 1
+        font_size:25
+    Image:
+        source:"icon.png"
+        size_hint:.1,.1
+        pos: '400dp','130dp'
+    
+    Button:
+        text: 'BACK'
+        size_hint:.4,.1
+        background_color: 0 , 0 , 204/255 , 0.9
+        pos: '120dp','50dp'
+        on_release:
+            app.root.current = 'first'
+            root.manager.transition.direction='down'
+                  
+<Win_three>:
+    name:'three'
+    lb: nbr
+    k:Moyenne
+    inp_1:coff
+    inp_2:TD
+    inp_3:TP
+    inp_4:EXAMEN
+
+    k2:Moyenne2
+    inp_5:coff2
+    inp_6:TD2
+    inp_7:TP2
+    inp_8:EXAMEN2
+
+    k3:Moyenne3
+    inp_9:coff3
+    inp_10:TD3
+    inp_11:TP3
+    inp_12:EXAMEN3
+
+
+    k4:Moyenne4
+    inp_13:coff4
+    inp_14:TD4
+    inp_15:TP4
+    inp_16:EXAMEN4
+
+
+    k5:Moyenne5
+    inp_17:coff5
+    inp_18:TD5
+    inp_19:TP5
+    inp_20:EXAMEN5
+
+
+    k6:Moyenne6
+    inp_21:coff6
+    inp_22:TD6
+    inp_23:TP6
+    inp_24:EXAMEN6
+
+
+    k7:Moyenne7
+    inp_25:coff7
+    inp_26:TD7
+    inp_27:TP7
+    inp_28:EXAMEN7
+
+
+    k8:Moyenne8
+    inp_29:coff8
+    inp_30:TD8
+    inp_31:TP8
+    inp_32:EXAMEN8
+
+
+    k9:Moyenne9
+    inp_33:coff9
+    inp_34:TD9
+    inp_35:TP9
+    inp_36:EXAMEN9
+
+    k10:Moyenne10
+    inp_37:coff10
+    inp_38:TD10
+    inp_39:TP10
+    inp_40:EXAMEN10
+    canvas:
+        Rectangle:
+            source:"img.jpg"
+            size: self.size
+    
+    Button:
+        text:'Moyenne générale'
+        size_hint:.2,.1
+        pos: '20dp','20dp'
+        on_press:
+            root.click()
+        
+            
+        
+        
+    
+        
+        
+        
+            
+   
+    GridLayout:
+        rows:1
+        pos: '1dp','290dp'
+        GridLayout:
+            cols:6
+            Label:
+                text:'Module'
+                color: 0 , 0 , 0 , 1   
+            Label:
+                text:'coff'
+                color: 0, 0 , 0 , 1
+            Label:
+                text:'TD'
+                color: 0, 0 , 0 , 1
+            Label:
+                text:'TP'
+                color: 0, 0 , 0 , 1
+            Label:
+                text:'EXAMEN'
+                color: 0, 0 , 0 , 1
+            Label:
+                text:'Moyenne'
+                color: 0, 0 , 0 , 1
+    TextInput:
+        id: module
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','540dp'
+        multiline:False
+    TextInput:
+        id: coff
+       
+        size_hint:.07,.06
+        pos: '99dp','540dp'
+        
+        multiline:False 
+        on_text:root.show_moyenne()
+    TextInput:
+        id: TD
+        
+        size_hint:.07,.06
+        pos: '182dp','540dp'
+        multiline:False   
+        on_text:root.show_moyenne()
+    TextInput:
+        id: TP
+        
+        size_hint:.07,.06
+        pos: '250dp','540dp'
+        multiline:False
+        on_text:root.show_moyenne()
+    TextInput:
+        id: EXAMEN
+        
+        size_hint:.09,.06
+        pos: '320dp','540dp'
+        multiline:False
+        on_text:root.show_moyenne()
+        
+    TextInput:
+        id: Moyenne
+        text:""
+        size_hint:.09,.06
+        pos: '390dp','540dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+        
+    
+
+
+
+    
+
+
+    
+
+
+    TextInput:
+        id: module2
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','500dp'
+        multiline:False
+    TextInput:
+        id: coff2
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','500dp'
+        multiline:False 
+    TextInput:
+        id: TD2
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','500dp'
+        multiline:False   
+    TextInput:
+        id: TP2
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','500dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN2
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','500dp'
+        multiline:False
+    TextInput:
+        id: Moyenne2
+        text:""
+        size_hint:.09,.06
+        pos: '390dp','500dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+    
+    
+
+
+
+
+
+
+
+
+    
+
+    TextInput:
+        id: module3
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','460dp'
+        multiline:False
+    TextInput:
+        id: coff3
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','460dp'
+        multiline:False 
+    TextInput:
+        id: TD3
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','460dp'
+        multiline:False   
+    TextInput:
+        id: TP3
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','460dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN3
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','460dp'
+        multiline:False
+    
+    TextInput:
+        id: Moyenne3
+        text:""
+        size_hint:.09,.06
+        pos: '390dp','460dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+
+
+    
+
+
+    TextInput:
+        id: module4
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','420dp'
+        multiline:False
+    TextInput:
+        id: coff4
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','420dp'
+        multiline:False 
+    TextInput:
+        id: TD4
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','420dp'
+        multiline:False   
+    TextInput:
+        id: TP4
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','420dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN4
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','420dp'
+        multiline:False
+    
+    TextInput:
+        id: Moyenne4
+        text:" "
+        size_hint:.09,.06
+        pos: '390dp','420dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+
+
+
+    
+    TextInput:
+        id: module5
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','380dp'
+        multiline:False
+    TextInput:
+        id: coff5
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','380dp'
+        multiline:False 
+    TextInput:
+        id: TD5
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','380dp'
+        multiline:False   
+    TextInput:
+        id: TP5
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','380dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN5
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','380dp'
+        multiline:False
+    TextInput:
+        id: Moyenne5
+        text:" "
+        size_hint:.09,.06
+        pos: '390dp','380dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+   
+
+
+
+
+    
+
+
+
+    TextInput:
+        id: module6
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','340dp'
+        multiline:False
+    TextInput:
+        id: coff6
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','340dp'
+        multiline:False 
+    TextInput:
+        id: TD6
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','340dp'
+        multiline:False   
+    TextInput:
+        id: TP6
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','340dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN6
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','340dp'
+        multiline:False
+    
+    TextInput:
+        id: Moyenne6
+        text:" "
+        size_hint:.09,.06
+        pos: '390dp','340dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+
+
+
+
+
+    TextInput:
+        id: module7
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','300dp'
+        multiline:False
+    TextInput:
+        id: coff7
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','300dp'
+        multiline:False 
+    TextInput:
+        id: TD7
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','300dp'
+        multiline:False   
+    TextInput:
+        id: TP7
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','300dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN7
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','300dp'
+        multiline:False
+    
+    TextInput:
+        id: Moyenne7
+        text:" "
+        size_hint:.09,.06
+        pos: '390dp','300dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+
+
+
+   
+
+
+    TextInput:
+        id: module8
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','260dp'
+        multiline:False
+    TextInput:
+        id: coff8
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','260dp'
+        multiline:False 
+    TextInput:
+        id: TD8
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','260dp'
+        multiline:False   
+    TextInput:
+        id: TP8
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','260dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN8
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','260dp'
+        multiline:False
+    TextInput:
+        id: Moyenne8
+        text:" "
+        size_hint:.09,.06
+        pos: '390dp','260dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+    
+
+
+    
+
+    TextInput:
+        id: module9
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','220dp'
+        multiline:False
+    TextInput:
+        id: coff9
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','220dp'
+        multiline:False 
+    TextInput:
+        id: TD9
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','220dp'
+        multiline:False   
+    TextInput:
+        id: TP9
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','220dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN9
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','220dp'
+        multiline:False
+    TextInput:
+        id: Moyenne9
+        text:" "
+        size_hint:.09,.06
+        pos: '390dp','220dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+    
+    
+        
+    
+
+
+
+
+
+
+  
+
+    TextInput:
+        id: module10
+        text:'Module'
+        size_hint:.200,.06
+        pos: '1dp','180dp'
+        multiline:False
+    TextInput:
+        id: coff10
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '99dp','180dp'
+        multiline:False 
+    TextInput:
+        id: TD10
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '182dp','180dp'
+        multiline:False   
+    TextInput:
+        id: TP10
+        on_text:root.show_moyenne()
+        size_hint:.07,.06
+        pos: '250dp','180dp'
+        multiline:False
+    TextInput:
+        id: EXAMEN10
+        on_text:root.show_moyenne()
+        size_hint:.09,.06
+        pos: '320dp','180dp'
+        multiline:False
+    TextInput:
+        id: Moyenne10
+        text:""
+        size_hint:.09,.06
+        pos: '390dp','180dp'
+        readonly:True
+        multiline:False
+        font_color: 1 , 0 , 0 , 1
+        background_color:1 , 0 , 0 ,0.5
+
+    Label:
+        id:resultat
+        text:'resultat'
+        pos: '50dp','-150dp'
+        color: 0 , 0 , 0 , 1
+        font_size: 20
+
+    
+    Label:
+        id: nbr
+        text:"0"
+        pos: '150dp','-150dp'
+        color: 0 , 0 , 0 , 1
+        font_size : 20
+
+    Button:
+        text: 'BACK'
+        size_hint:.4,.1
+        background_color: 0 , 0 , 204/255 , 0.9
+        pos: '120dp','30dp'
+        on_release:
+            app.root.current = 'first'
+            root.manager.transition.direction='down'
+
+        
+            
+               
+    
